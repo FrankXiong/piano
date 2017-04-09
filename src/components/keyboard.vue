@@ -1,7 +1,9 @@
 <template>
   <div class="board">
     <div class="key" :class="{active: key.isActive}" v-for="key in keys" @click="play($event)">
-      <audio :id="key.code" :src="key.audio" preload></audio>
+      <audio :id="key.code" :src="key.audio" preload>
+        <!-- <source  type="audio/ogg"> -->
+      </audio>
     </div>
   </div>
 </template>
@@ -20,7 +22,7 @@
       },
       press(code) {
         const dDom = document.getElementById(code);
-        dDom.play();
+        dDom.cloneNode().play();
       }
     },
     created() {
