@@ -1,2 +1,17 @@
 # piano
-网页上弹钢琴
+> A vue project.
+
+## Development
+
+```shell
+npm i cooking -g
+npm run dev
+```
+
+## Production
+```
+npm run dist
+```
+
+## License
+MIT
