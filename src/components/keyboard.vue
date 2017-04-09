@@ -1,7 +1,6 @@
 <template>
   <div class="board">
     <div class="key" :class="{active: key.isActive}" v-for="key in keys" @click="play($event)">
-      <!-- <p class="value">{{key.value}}</p> -->
       <audio :id="key.code" :src="key.audio" preload></audio>
     </div>
   </div>
@@ -39,7 +38,7 @@
     justify-content: space-around;
     .key {
       width: 9%;
-      height: 55vh;
+      height: 50vh;
       background: $black;
       text-align: center;
       display: flex;

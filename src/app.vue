@@ -19,5 +19,9 @@
 <style lang="scss" scoped>
   .container {
     margin: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 </style>
