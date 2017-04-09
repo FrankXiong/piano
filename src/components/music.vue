@@ -47,6 +47,7 @@
 .music-panel {
   height: 30vh;
   position: relative;
+  margin-bottom: 20px;
   .music-header {
     margin-bottom: 10px;
     .hint {

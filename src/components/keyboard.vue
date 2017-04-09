@@ -1,8 +1,7 @@
 <template>
   <div class="board">
-    <div class="key" :class="{active: key.isActive}" v-for="key in keys" @click="play($event)">
-      <audio :id="key.code" :src="key.audio" preload>
-        <!-- <source  type="audio/ogg"> -->
+    <div :id="key.code" class="key" :class="{active: key.isActive}" v-for="key in keys" @click="play($event)">
+      <audio :src="key.audio" preload>
       </audio>
     </div>
   </div>
@@ -10,6 +9,7 @@
 
 <script>
   import data from '../data.js';
+  import move from 'move-js';
   export default {
     data: function() {
       return {
@@ -22,7 +22,9 @@
       },
       press(code) {
         const dDom = document.getElementById(code);
-        dDom.cloneNode().play();
+        let moveBack = move(dDom).y(0);
+        move(dDom).y(100).then(moveBack).end();
+        dDom.lastChild.cloneNode().play();
       }
     },
     created() {
@@ -40,7 +42,7 @@
     justify-content: space-around;
     .key {
       width: 9%;
-      height: 50vh;
+      height: 300px;
       background: $black;
       text-align: center;
       display: flex;
