@@ -1,5 +1,5 @@
 # piano
-> A vue project.
+> You can play piano by keyboard or click.
 
 ## Development
 
