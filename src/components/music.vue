@@ -7,7 +7,7 @@
     <div class="music">
       <span class="key" :class="{hidden: item == 0}" v-for="item in music.value">{{item}}</span>
     </div>
-    <el-dialog title="选择一项" size="full" v-model="dialogVisible">
+    <el-dialog title="选择一项" size="large" v-model="dialogVisible">
       <el-radio-group v-model="musicSelected">
         <div class="music-item" v-for="item in musicList">
           <el-radio :label="item.name"></el-radio>
